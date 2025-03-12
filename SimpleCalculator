@@ -1,0 +1,28 @@
+public class SimpleCalculator {
+    public static void main(String[] args) {
+        double num1 = 15.5;
+        double num2 = 3.2;
+        double addition = num1 + num2;
+        double subtraction = num1 - num2;
+        double multiplication = num1 * num2;
+        double division = num1 / num2;
+        String[] operations = {"加法","减法","乘法","除法"};
+        double[] results = {addition,subtraction,multiplication,division};
+        System.out.println("简单计算器结果:");
+        System.out.println("数字1: " + num1);
+        System.out.println("数字2: " + num2);
+        System.out.println("------------------");
+        for( int i = 0; i < operations.length; i++) {
+            System.out.printf("%s: %.2f%n", operations[i], results[i]);
+        }
+        for (double result : results) {
+            if (result >0) {
+                System.out.println("结果 " + result + " 是正数");
+            } else if (result < 0) {
+                System.out.println("结果 " + result + " 是负数");
+            } else {
+                System.out.println("结果是0");
+            }
+        }
+    }
+}
