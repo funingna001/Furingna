@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class LuckyNumberGame {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("请输入你的名字：");
+        String name = scanner.nextLine();
+        int luckyNumber = generateLuckyNumber(name);
+        System.out.println("你好，" + name + "! 你的幸运数字是：" + luckyNumber);
+        if (luckyNumber % 2 == 0) {
+            System.out.println("这是一个偶数，象征平稳和谐！");
+        } else {
+            System.out.println("这是一个奇数，代表活力创意！");
+        }
+        scanner.close();
+    }
+    private static int generateLuckyNumber(String name) {
+        int sum = 0;
+        for (int i = 0;i < name.length(); i++) {
+            sum += name.charAt(i);
+        }
+        return (sum % 100) + 1;
+    }
+}
