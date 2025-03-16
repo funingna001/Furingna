@@ -1,0 +1,22 @@
+public class BasicExample {
+    public static final int MAX_SCORE = 100;
+    public static final double PI = 3.1415926;
+    public static void main(String[] args) {
+        int age = 25;
+        double height = 1.75;
+        char grade = 'A';
+        boolean isStudent = true;
+        String name = "张伟";
+
+        System.out.println("姓名；" + name);
+        System.out.println("年龄：" + age);
+        System.out.println("身高：" + height +"米");
+        System.out.println("成绩等级：" + grade);
+        System.out.println("是否是学生：" + isStudent);
+        System.out.println("最高分常量：" + MAX_SCORE);
+        System.out.println("圆周率常量：" + PI);
+
+        age = 26;
+        System.out.println("更新后的年龄：" + age);
+    }
+}
