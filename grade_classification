@@ -1,0 +1,15 @@
+public class grade_classification {
+    public static void main(String[] args) {
+        int score = 99;
+        if (score >= 90)
+            System.out.println("该成绩的等级为优");
+        else if (score >= 80)
+            System.out.println("该成绩的等级为良");
+        else if (score >= 70)
+            System.out.println("该成绩的等级为中等");
+        else if (score >= 60)
+            System.out.println("该成绩的等级为及格");
+        else
+            System.out.println("该成绩的等级为不及格");
+    }
+}
