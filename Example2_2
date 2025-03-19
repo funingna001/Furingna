@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Example2_2 {
+    public static void main(String[] args) {
+        int m,n,r,t;
+        int m1,n1;
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("请输入第一个数:");
+        m= scanner.nextInt();
+        System.out.print("请输入第二个数:");
+        n= scanner. nextInt();
+        m1=m;n1=n;
+        if(m<n)  {
+            t=m;m=n;n=t;
+        }
+        do {
+            r=m%n;
+            m=n;
+            n=r;
+        }while(r!=0);
+        System.out.println(m1+"和"+n1+"的最大公约数是"+m);
+    }
+}
