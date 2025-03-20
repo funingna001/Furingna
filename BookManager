@@ -1,0 +1,59 @@
+public class BookManager {
+    static class Book {
+        String title;
+        String author;
+        boolean isAvailable;
+
+        Book(String title, String author) {
+            this.title = title;
+            this.author = author;
+            this.isAvailable = true;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Book[]
+                library = new Book[3];
+    library[0] = new Book("java基础入门", "张三");
+    library[1] = new Book("算法与数据结构", "李四");
+    library[2] = new Book("设计模式", "王五");
+
+    System.out.println("欢迎使用图书管理系统");
+    displayBooks(library);
+
+    borrowBook(library, "java基础入门");
+    displayBooks(library);
+
+    returnBook(library, "java基础入门");
+    displayBooks(library);
+}
+static void displayBooks(Book[] books) {
+    System.out.println("\n当前图书馆书籍状态： ");
+    for (Book book : books) {
+        String status = book.isAvailable ?"可借" : "已借出";
+    System.out.println(book.title + " - " + book.author  +" [" + status + "]");
+    }
+}
+
+static void borrowBook(Book[] books, String title) {
+    for (Book book : books) {
+        if (book.title.equals(title) && book.isAvailable) {
+            book.isAvailable = false;
+            System.out.println("\n成功借出: "  + title);
+            return;
+        }
+    }
+    System.out.println("|n无法借出: " + title + "(可能已被借出或不存在）");
+}
+static void returnBook(Book[] books, String title) {
+    for (Book book : books) {
+        if (book.title.equals(title) && !book.isAvailable) {
+            book.isAvailable = true;
+            System.out.println("\n成功归还：" + title);
+            return;
+        }
+    }
+    System.out.println("\n无法归还；" + title + "(可能未被借出）");
+}
+}
